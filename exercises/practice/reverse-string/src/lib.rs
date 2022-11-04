@@ -21,6 +21,7 @@ pub fn reverse(input: &str) -> String {
         new_string.push_str(var);
     }
 
+
     //return input.chars().rev().collect();
     println!("Original string: {}, reversed string: {}", input, new_string);
     return new_string;
