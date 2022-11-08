@@ -12,7 +12,7 @@ pub enum Allergen {
     Pollen = 64,
     Cats = 128,
 }
-const MAX_SCORE: u32 = 255; //2^8-1;       //La somma di tutti è 255
+const MAX_SCORE: u32 = 2^8-1;       //La somma di tutti è 255
 
 pub struct Allergies{
     //allergies : [Allergen; 8],
@@ -53,7 +53,6 @@ impl Allergies {
     }
 
     pub fn allergies(&self) -> Vec<Allergen> {
-        //self.allergies.clone();
-        self.allergies.to_vec()
+        self.allergies.clone()
     }
 }
