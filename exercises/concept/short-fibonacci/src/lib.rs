@@ -26,3 +26,18 @@ pub fn fibonacci() -> Vec<u8> {
     }
     return vet;
 }
+
+pub fn print_fib() -> Vec<u8> {
+    let my_vec = fibonacci();
+    //Questo muove
+    //myVec.into_iter().for_each(|val| println!("{:?}", val));
+    //Questo no, perché attiva in realtà iter, essendo &Container
+    (&my_vec).into_iter().for_each(|val| println!("{:?}", val));
+    my_vec.iter().for_each(|val| println!("{:?}", val));
+    //Se non metto la &, muovo gli elementi e dopo non posso ritornare.
+    //Il for usa sotto into_iter, quindi tipende dal tipo del contenitore
+    for val in &my_vec {
+        println!("{:?}", val);
+    }
+    return my_vec;
+}

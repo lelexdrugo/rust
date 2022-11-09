@@ -1,6 +1,7 @@
 use short_fibonacci::*;
 
 #[test]
+#[ignore]
 fn test_empty() {
     assert_eq!(create_empty(), Vec::new());
 }
@@ -23,4 +24,10 @@ fn test_fibonacci() {
     for window in fibb.windows(3) {
         assert_eq!(window[0] + window[1], window[2]);
     }
+}
+
+
+#[test]
+fn my_fun() {
+    print_fib();
 }
