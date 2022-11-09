@@ -28,9 +28,8 @@ impl School {
     }
 
     pub fn grades(&self) -> Vec<u32> {
-        //self.students.keys().into_iter().collect()
-        //self.students.iter().flat_map(|k,v|{}).collect()
-        let keys : Vec<u32> = self.students.keys().map(|val|*val).collect();
+        //self.students.keys().map(|&x|{x}).collect()
+        let keys : Vec<u32> = self.students.keys().cloned().collect();
         return keys
     }
 
